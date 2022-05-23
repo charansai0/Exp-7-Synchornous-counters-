@@ -46,43 +46,76 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 
 4-bit Count Down Counter
 ### Procedure
-/* write all the steps invloved */
+### Step 1:
+Create a new file in quartus II.
 
+### Step 2:
+Module Declaration. Module should have the file name.
+
+### Step 3:
+Use begin declaration to define the functionality of logic circuits.
+
+### Step 4:
+Within begin use if and else statements.
+
+### Step 5:
+At the end give endmodule.
+
+### Step 6:
+Run the program and choose RTL viewer to get RTL realization.
 
 
 ### PROGRAM 
-/*
+~~~
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: v.charan sai
+RegisterNumber:  212221240061
+~~~
 
+### UP COUNTER:
+~~~
+module UC(input CLK,input reset,output[0:3]counter);
+reg[0:3]counter_up;
+always@(posedge CLK or posedge reset)
+begin 
+if(reset)
+counter_up<=4'd0;
+else
+counter_up<=counter_up+4'd1;
+end
+assign counter=counter_up;
+endmodule
+~~~
+### DOWN COUNTER:
+~~~
+module dc(input CLK,input reset,output[0:3]counter);
+reg[0:3]counter_down;
+always@(posedge CLK or posedge reset)
+begin 
+if(reset)
+counter_down<=4'd0;
+else
+counter_down<=counter_down -4'd1;
+end
+assign counter=counter_down;
+endmodule
+~~~
+### RTL LOGIC UP COUNTER AND DOWN COUNTER
+### UP COUNTER:
+![output](https://github.com/charansai0/Exp-7-Synchornous-counters-/blob/main/1.png)
+### DOWN COUNTER:
+![output](https://github.com/charansai0/Exp-7-Synchornous-counters-/blob/main/2.png)
+### TIMING DIGRAMS FOR COUNTER
 
+### UP COUNTER:
+![output](https://github.com/charansai0/Exp-7-Synchornous-counters-/blob/main/3.png)
+### DOWN COUNTER:
+![output](https://github.com/charansai0/Exp-7-Synchornous-counters-/blob/main/4.png)
+### TRUTH TABLE
 
-
-
-
-### RTL LOGIC UP COUNTER AND DOWN COUNTER  
-
-
-
-
-
-
-
-
-
-### TIMING DIGRAMS FOR COUNTER  
-
-
-
-
-
-### TRUTH TABLE 
-
-
-
-
-
-
+### UP COUNTER:
+![output](https://github.com/charansai0/Exp-7-Synchornous-counters-/blob/main/5.png)
+### DOWN COUNTER:
+![output](https://github.com/charansai0/Exp-7-Synchornous-counters-/blob/main/6.png)
 ### RESULTS 
+The 4 bit up and down counters has been implemented and validated the functionality.
